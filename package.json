@@ -1,0 +1,19 @@
+{
+  "name": "cfg_verifier",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gottharsis/cfg_verifier",
+  "author": "Ayush Nene",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+  },
+  "scripts": {
+    "build": "webpack"
+  }
+}
