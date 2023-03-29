@@ -126,19 +126,24 @@ function removeLongRules(rules: CFGRule[]) {
 }
 
 function replaceNonterminals(rules: CFGRule[]) {
-    const nonTerminalRules = new Set<CFGRule>()
+    const nonTerminals = new Set<string>()
+    const getNonterminal = (ch: string) => `U_literal,${ch}`
     const ensureNonterminal = (ch: string) => {
         if (isNonterminal(ch)) {
             return ch
         }
-        const nonterm = `U_literal,${ch}`
-        nonTerminalRules.add({ lhs: nonterm, rhs: [ch] })
-        return nonterm
+        nonTerminals.add(ch)
+        return getNonterminal(ch)
     }
 
     const finalRules: CFGRule[] = rules.map(({ lhs, rhs }) => ({
         lhs,
         rhs: rhs.length === 1 ? rhs : rhs.map((ch) => ensureNonterminal(ch)),
+    }))
+
+    const nonTerminalRules = [...nonTerminals].map((ch) => ({
+        lhs: getNonterminal(ch),
+        rhs: [ch],
     }))
 
     return [...finalRules, ...nonTerminalRules]
