@@ -1,28 +1,35 @@
 {
-  "name": "cfg_verifier",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/gottharsis/cfg_verifier",
-  "author": "Ayush Nene",
-  "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "@types/jest": "^29.5.0",
-    "@types/lodash": "^4.14.191",
-    "@types/node": "^18.15.11",
-    "jest": "^29.5.0",
-    "prettier": "^2.8.7",
-    "ts-jest": "^29.0.5",
-    "ts-loader": "^9.4.2",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.2",
-    "webpack": "^5.76.3",
-    "webpack-cli": "^5.0.1"
-  },
-  "scripts": {
-    "build": "webpack"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+    "name": "cfg_verifier",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/gottharsis/cfg_verifier",
+    "author": "Ayush Nene",
+    "license": "MIT",
+    "private": true,
+    "devDependencies": {
+        "@types/jest": "^29.5.0",
+        "@types/lodash": "^4.14.191",
+        "@types/node": "^18.15.11",
+        "@types/react": "^18.0.31",
+        "@types/react-dom": "^18.0.11",
+        "html-webpack-plugin": "^5.5.0",
+        "jest": "^29.5.0",
+        "prettier": "^2.8.7",
+        "ts-jest": "^29.0.5",
+        "ts-loader": "^9.4.2",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.0.2",
+        "webpack": "^5.76.3",
+        "webpack-cli": "^5.0.1",
+        "webpack-dev-server": "^4.13.2"
+    },
+    "scripts": {
+        "build": "NODE_ENV=production webpack",
+        "dev": "webpack serve --open"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
 }
